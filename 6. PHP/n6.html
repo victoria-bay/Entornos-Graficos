@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Práctica 6</title>
+    </head>
+    <body>
+        <p>Ejercicio 1:</p>
+        <p>Consulta a una base de datos: Para comenzar la comunicación con un servidor de base de datos 
+        MySQL, es necesario abrir una conexión a ese servidor. Para inicializar esta conexión, PHP ofrece 
+        la función <b>mysqli_connect()</b>.</p>
+        
+        <p>Todos sus parámetros son opcionales, pero hay tres de ellos que generalmente son necesarios: 
+        <b>$hostname</b>, <b>$username</b> y <b>$password</b>.</p>
+
+        <p>Una vez abierta la conexión, se debe seleccionar una base de datos para su uso, mediante la función: 
+        <b>$mysqli_select_db</b>.</p>
+
+        <p>Esta función debe pasar como parámetro <b>$database</b>.</p>
+
+        <p>La función mysqli_query() se utiliza para <b>realizar consultas a la base de datos</b>.</p>
+
+        <p>Y requiere como parámetros <b>$mysql</b> y <b>$query</b></p>
+
+        <p>La cláusula or die() se utiliza para <b>finalizar la ejecución del script</b>.</p>
+
+        <p>Y la función mysqli_eror() se puede usar para <b>mostrar el mensaje de error  de la llamada más reciente 
+        a la base de datos</b>.</p>
+
+        <p>Si la función mysqli_quiery() es exitosa, el conjunto resultante retornado se almacena en una variable, 
+        por ejemplo, $vResult, y a continuación se puede ejecutar el siguiente código:</p>
+
+        <p><b>Explicación:</b> mysqli_fetch_array() devuelve un array que representa una de las filas obtenidas en una 
+        consulta a la base de datos, o reforna "false" en caso de no haber más filas. Por lo tanto, la línea 2 indica que 
+        lo que se encuentre dentro del "while" se repetirá por cada fila obtenida.<br><br>Dentro del while está el código HTML 
+        que renderizará un elemento fila con tres columnas, donde se mostrarán los primeros tres datos de la fila obtenida.
+        <br><br>Al finalizar el bucle, se libera el espacio en la memoria ocupado por la variable que contenía los datos de 
+        fila y luego se cierra la conexión con la base de datos.</p>
+    </body>
+</html>
