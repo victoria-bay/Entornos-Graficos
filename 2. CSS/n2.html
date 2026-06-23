@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> Práctica 2 </title>
+    </head>
+    <body>
+        <p> Ejercicio 1: </p>
+        <p> 1. CSS son las siglas de <b> hojas de estilo en cascada</b>. Las hojas de 
+        estilo es una tecnología que permite controlar la apariencia de una página web.</p>
+        <p>CSS describe cómo los elementos dispuestos en la página son presentados al usuario.
+        Permite especificar estilos como el tamaño, fuente, color, espaciado entre textos y 
+        recuadros, así como el lugar donde disponer texto e imágenes. No es un lenguaje de programación, 
+        sino un lenguaje de hojas de estilo.</p>
+
+        <p>2. Las hojas de estilo se componen de una o más reglas aplicadas a un documento HTML o XML.
+        Estas reglas tienen dos pares: un <b>selector</b> y una <b>declaración</b>; a su vez, esta última
+        está compuesta por una <b>propiedad</b> y un <b>valor</b>.</p>
+
+        <p>3. Se pueden asociar las reglas de estilo a las marcas HTML de tres maneras:</p>
+        <ul>
+            <li> Direcamente sobre la marca.</li>
+            <li> En el head de la página. </li>
+            <li> Agrupando las reglas de estilo en un archivo independiente con extensión .css. </li>
+        </ul>
+
+        <p>4. Los distintos tipos de selectores más utilizados son:</p>
+        <ul>
+            <li> <b>Selector universal *:</b> aplica las reglas de estilo a todos los elementos HTML en el documento
+            vinculado. Por ejemplo, * {color: White;} cambia el color de texto de todos los elementos HTML a blanco.</li><br>
+            <li> <b>Selector de clase .clase:</b> aplica las reclas de estilo a los elementos HTML del documento vinculado
+            que tengan cierto valor en su atributo class. Por ejemplo, si dentro dentro de nuestro HTML tenemos diversos elementos
+            con el atributo class="tabla", y en la hoja de estilos vinculada definimos: .tabla {border: 3px solid #000000;}, todos
+            los elementos (tablas) con dicha clase tendrán bordes negros de 3px. </li><br>
+            <li> <b>Selector ID #id:</b> funciona similar al selector de clase, con la diferencia de que el filtro para aplicar las
+            reglas de estilo es el atributo id, además de que el selector comienza con #. Por ejemplo, si tuviéramos un elemento
+            input type="text" id="nombre" podríamos cambiar su tamaño de letra utilizando la regla #nombre{font-size: 20px}.</li><br>
+            <li> <b>Selector descendiente padre-hijo:</b> Supongamos que quisiéramos cambiar el color de letra del contenido encerrado
+            por un elemento "strong" si y solo si se encuentra dentro de la celda "td" de una tabla "table". La regla
+            table td strong {color:blue;} nos permite hacerlo.</li>
+        </ul>
+
+        <p>5. Una pseudoclase es una palabra precedida por dos puntos y que acompaña al selector de una regla de estilo. Por ejemplo,
+        a:link:hover o a:visited:hover. Estas clasifican a los elementos basados en características más allá de su nombre, atributos
+        o contenido, como por ejemplo atributos que no pueden deducirse de la estructura del documento. Estas son dinámicas en el
+        sentido de que un elemento puede adquirir o perder una pseudo-clase a medida que el usuario interactúa con el documento. </p>
+
+        <p>6. Existen valores que son heredados por los hijos de un elemento en la estructura del documento. Cada propiedad define si es 
+        heredada o no.<br><br>Por ejemplo, si tuvieramos definido p {font-family: 'Couried New', Courier, monospace;} y luego un elemento
+        con etiqueta b anidado en otro de etiqueta p, la etiqueta b obtiene la propiedad de p ya que es heredada.<br><br>Hay que tener en 
+        cuenta que los valores porcentuales no son heredados, sino que lo son los valores computados. Si tuvieramos p {font-size: 20px;} y 
+        b {font-size: 150%} y luego una etiqueta i anidada dentro de una etiqueta b que está anidada dento de una etiqueta p (p>b>i), entonces 
+        b recibe como herencia el tamaño de fuente de p, por lo que el porcentaje es aplicado al valor 20px y se obtiene como resultado 30px. 
+        Sin embargo, i no hereda el valor de la propiedad de b como porcentaje, sino que recibe el valor computado 30px. </p>
+
+        <p>7. Las hojas de estilo pueden tener tres orígnes diferentes:</p>
+        <ul> <li>El autor.</li> <li>El usuario.</li> <li>La aplicación del usuario.</li> </ul>
+        <p>De forma predefinida, las reglas en las hojas de estilo del autor tienen más fuerza que las reglas en las hojas de estilo del usuario; 
+        y todas las reglas que el usuario y el autor especifican tienen mayor fuerza que las reglas de la hoja de estilo predeterminada en la 
+        aplicación del usuario. Sin embargo, este orden puede ser ignorado con las reglas "!important". </p>
+
+        <hr>
+
+        <p>Ejercicio 2:</p>
+
+        <p>Hay tres reglas:</p>
+        <ul>
+            <li> La primera tiene tres declaraciones que se aplicarán a etiquetas "p" que tengan el atributo id="normal". La primera declaración 
+                establece que el tipo de letra del párrafo es arial, y que en caso de que el navegador no disponga esa fuente, intentará utilizar 
+                helvetica; la segunda establece el tamaño de la letra (11px) y la tercera establece su peso (negrita). </li><br>
+            <li> La segunda tiene tres declaraciones que se aplicarán a todos los elementos que tengan como atributo id="destacado". Todas las 
+                declaraciones de esta regla refieren al borde que delimita el elemento HTML; el primero refiere al tipo de línea del borde, en este 
+                caso la línea es continua (solid); el segundo refiere al color del borde, que en este caso es azul; y por último, "width" refiere al 
+                grosor de la línea, en este caso es 2px. </li><br>
+            <li> La última regla tiene dos declaraciones, y se aplica a todos los elementos HTML que tengan el atributo id="destino". La primera 
+                declaración dice que el color del fondo del elemento HTML será #9EC7EB, y la segunda declaración dice que que el color de la letra 
+                será rojo. </li><br>
+        </ul>
+
+        <hr>
+
+        <p>Ejercicio 3:</p>
+
+        <p>El código posee tres reglas:</p>
+        <ul>
+            <li> La primera regla se aplicará a etiquetas "p" que pertenezcan a la clase "quitar" 
+                Posee una sola declaración que indica que el color de la fuente será rojo. </li><br>
+            <li> La segunda regla se aplicará a todos los elementos HTML que pertenzcan a la clase "atributo". Tiene una única declaración que establece 
+                que el tamaño de la fuente será de 8px. </li><br>
+            <li> La tercera regla se aplicará a todos los elementos HTML que pertenzcan a la clase "importante". Tiene una única declaración que establece 
+                que el tamaño de la letra será de 20px. </li><br>
+        </ul>
+
+        <hr>
+
+        <p>Ejercicio 4:</p>
+
+        <p>Para el <b>código de la izquierda</b>, el texto "Este es un texto..." tendrá un tamaño de letra de 14px, no estará en negrita, será de color negro y el 
+            tipo de fuente será arial o helvetica. Esto es debido a que si bien hay una regla que dice que la letra de todos los elementos será verde, tiene más 
+            peso la declaración sobre la etiqueta p; también, la declaración sobre la clase tiene más peso que el de la etiqueta "p" y si bien en esta misma 
+            regla (.contenido) se define que la letra estará en negrita, tiene más peso la regla definida directamente sobre el elemento en HTML.<br><br>Luego, 
+            la tabla en su primera celda (fila 1, columna 1) presentará un texto en color verde.<br><br> Por último, en cuanto al hipervínculo se establece que 
+            mientras el usuario no haya visitado el link (es decir, mientras no haya apretado el hipervínculo) el link será de color gris; cuando el usuario se 
+            posicione sobre el link, este será de color fucsia; en el instante en el que el usuario haga clic en el link, este será rojo; y una vez que ya visitó 
+            el sitio, el link será azul.</p>
+        
+        <p>Para el <b>código de la derecha</b>, por defecto, todo el texto será verde, tendrá tamaño de fuente de 14px y estará en negrita. Además, texto del primer 
+        párrafo ("Esto es un texto...") tendrá fuente arial o helvetica y, a diferencia del resto del contenido, tendrá tamaño de fuente de 10px y color negro ya que las reglas 
+        que aplican a la etiqueta "p" tienen mayor prioridad que las reglas heredadas del body. En cuanto al hipervínculo, se comportará de igual forma que en el otro 
+        código.</p>
+
+        <hr>
+
+        <p>Ejercicio 5:</p>
+
+        <p>1. Los textos enfatizados dentro de cualquier título deben ser rojos: <b>em {color: red;}</b></p>
+        <p>2. Cualquier elemento que tenga asignado el atributo href y que esté dentro de cualquier párrafo que a su vez esté dentro de un bloque debe ser de color negro: 
+            <b>div p [href] {color: black;}</b></p>
+        <p>3. El texto de las listas no ordenadas que estén dentro del bloque identificado como "último" debe ser amarillo, pero si es un enlace a otra página debe ser azul:
+            <b>div#ultimo ul {color: yellow; a {color: blue;}}</b></p>
+        <p>4. Los elementos identificados como "importante" dentro de cualquier bloque deben ser verdes, pero si están dentro de un título deben ser rojos: 
+            <b>div .importante {color: green; h1 &, h2 &, h3 &, h4 &, h5 &, h6 & {color: red;}}</b></p>
+        <p>5. Todos los elementos h1 que especifiquen el atributo title, cualquiera sea su valor, deben ser azules:
+            <b>h1[title] {color: blue;}</b></p>
+        <p>6. El color de los enlaces en las listas ordenadas debe ser azul para los enlaces aún no visitados, y violeta para los ya visitados, y además, no deben aparecer 
+            subrayados: <b>ol li a {text-decoration:none; &:link{color: blue;} &:visited {color: purple;}}</b></p>
+    </body>
+</html>
