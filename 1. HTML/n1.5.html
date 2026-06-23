@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> Ejercitación 5 </title>
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                overflow: hidden;
+                font-family: Arial, sans-serif;
+            }
+            .tabla {
+                width: 100%;
+                height: 100%;
+                border-collapse: collapse;
+                border: 3px solid #000000;
+            }
+            .tabla td, .tabla th {
+                border: 2px solid #000000;
+                padding: 0;
+            }
+            iframe {
+                width: 100%;
+                height: 100%;
+                border: none;
+                display: block;
+            }
+        </style>
+    </head>
+    <body style="font-family: sans-serif;">
+        <table class="tabla">
+            <tr height="15%">
+                <td colspan="2" width="40%">
+                    <iframe
+                        srcdoc="
+                            <body style='text-align: center; font-family: sans-serif; margin: 10px;''> 
+                            <br><br>
+                            <h1 style='color:#119327; margin:0'> Florería Dulce Margarita </h1> 
+                            </body>">
+                    </iframe>
+                </td>
+
+                <td width="30%">
+                    <iframe 
+                        srcdoc="
+                            <body> <center> <img src='https://st.depositphotos.com/23480272/55029/i/450/depositphotos_550294914-stock-illustration-watercolor-illustration-patrick-day-chamomile.jpg' width='130'> </center> </body>">
+                    </iframe>
+                </td>
+            </tr>
+
+            <tr height="50%">
+                <td width="25%">
+                    <iframe 
+                        srcdoc="
+                            <body style='font-family:sans-serif'> 
+                                <ul> 
+                                    <a href='?page=inicio' target='_parent''> <li> Inicio </li> </a> 
+                                    <a href='?page=articulos' target='_parent''> <li> Artículos </li> </a> 
+                                    <a href='?page=informacion' target='_parent''> <li> Información </li> </a> 
+                                </ul>
+                            </body>">
+                    </iframe>
+                </td>
+
+                <td colspan="2" width="75%">
+                    <iframe id="principal" name="principal"></iframe>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="3">
+                    <p align="center">
+                        <a href='?page=inicio' target='_parent'> Inicio</a> |
+                        <a href='?page=articulos' target='_parent'> Productos</a> | 
+                        <a href='?page=informacion' target='_parent'> Información</a>  
+                    </p>
+                </td>
+            </tr>
+        </table>
+
+        <script>
+            const paginas = {
+                inicio: `
+                    <body style='font-family:sans-serif'>
+                        <p><font size='6' color='#f9ed53'> ¡Bienvenido a la tienda virtual! </font></p>
+                        <p> Somos una florería con más de 30 años de trayectoria en la ciudad de Rosario dedicados al arte floral.
+                        Nuestros trabajos se confeccionan con flores naturales de primera calidad.</p>
+                    </body>
+                `,
+                articulos: `
+                    <body style='font-family:sans-serif'>
+                        <h2 style='color:#f9ed53'> Artículos </h2>
+                        <table width='450' frame='border' rules='all'>
+                            <tr align='center'> <th colspan='2'> Ramos </th> </tr>
+                            <tr align='center'> <th width='50%'> Nombre </th> <th> Precio </th> </tr>
+
+                            <tr> <td> Acuarela </td> <td> $68,000.00 </td> </tr>
+                            <tr> <td> Alegría </td> <td> $70,000.00 </td> </tr>
+                            <tr> <td> Amor </td> <td> $65,500.00 </td> </tr>
+                            <tr> <td> Blooming </td> <td> $70,000.00 </td> </tr>
+                            <tr> <td> Dulce pasión </td> <td> $70,000.00 </td> </tr>
+                            <tr> <td> Freedom </td> <td> $68,000.00 </td> </tr>
+                            <tr> <td> Rapsodia </td> <td> $78,000.00 </td> </tr>
+                            <tr> <td> Lola </td> <td> $76,500.00 </td> </tr>
+                            <tr> <td> Acuarela </td> <td> $68,000.00 </td> </tr>
+                            <tr> <td> Ocaso </td> <td> $63,700.00 </td> </tr>
+                            <tr> <td> Vincent </td> <td> $68,000.00 </td> </tr>
+
+                            <tr align='center'> <th colspan='2'> Arreglos </th> </tr>
+                            <tr align='center'> <th> Nombre </th> <th> Precio </th> </tr>
+
+                            <tr> <td> Big One Roses </td> <td> $780,000.00 </td> </tr>
+                            <tr> <td> Canasta Big Blooming </td> <td> $324,000.00 </td> </tr>
+                            <tr> <td> Canasta Flores de Estación </td> <td> $215,000.00 </td> </tr>
+                            <tr> <td> Corazón Box </td> <td> $160,000.00 </td> </tr>
+                            <tr> <td> Roses Box </td> <td> $163,000.00 </td> </tr>
+                        </table>
+                    </body>
+                `,
+                informacion: `
+                    <body style='font-family:sans-serif'>
+                        <h2 style='color:#f9ed53'> Información de Contacto </h2>
+                        <p> Para consultas escribinos a nuestra dirección de correo:  </p>
+                        <a href="mailto:consultas@empresa.com">consultas@empresa.com</a>
+                    </body>
+                `,
+            };
+
+        const url = new URLSearchParams(window.location.search);
+        const pagActual = url.get('page') || 'inicio';
+
+        document.getElementById('principal').srcdoc = paginas[pagActual];
+        </script>
+    </body>
